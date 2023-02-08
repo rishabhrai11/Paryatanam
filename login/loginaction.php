@@ -4,6 +4,10 @@ session_start();
 // Connect to the MySQL database
 $conn = mysqli_connect('localhost', 'root', 'usbw', 'test');
 
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
   // Get the form data
@@ -22,9 +26,9 @@ if (isset($_POST['submit'])) {
     // Redirect the user to the dashboard
     $_SESSION['logged_in'] = true;
     $result1 = mysqli_query($conn, "SELECT username FROM testsignup WHERE email='$email'");
-    $row = mysqli_fetch_row($result1);
-    $_SESSION['username'] = $row[0];
-    header("Location: index.php");
+    $row = mysqli_fetch_assoc($result1);
+    $_SESSION['username'] = $row['username'];
+    header("Location: \index.php");
     exit;
   } else {
     // If the login is unsuccessful, display an error message

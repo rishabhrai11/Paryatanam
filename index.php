@@ -34,7 +34,9 @@
     </head>
     
     <body>
-    
+    <?php
+    session_start();
+    ?>
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -90,7 +92,22 @@
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
                             <li class="scroll-to-section"><button2 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
                                 <button2 onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                     <a href="login/login.php">Login /signup</a></button2></li>
+                                <?php
+                                    // Start the session
+                                     session_start();
+
+                                         // Check if the user's name is stored in the session
+                                        if (isset($_SESSION['username'])) {
+                                                // Retrieve the user's name from the session
+                                                $username = $_SESSION['username'];
+                                                // Display the user's name
+                                                echo "Welcome, $username";
+                                                echo "<button class='logout-button' onclick=\"window.location.href='login/logoutaction.php'\">Logout</button>";
+                                        } else {
+                                                 // The user's name is not stored in the session, show an error
+                                                echo "<a href='login/login.php'>Login/Signup</a></button2></li>";
+                                        }
+                                            ?>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

@@ -1,0 +1,53 @@
+<html>
+<head>
+	<style>
+		/* Popup Style */
+		.popup {
+			background-color: rgb(255, 0, 0);
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.popup-content {
+			background-color: white;
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.close-button {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- Booking Button -->
+	<button onclick="showPopup()">Book</button>
+
+	<!-- Popup -->
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<p>Booked!</p>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<!-- JavaScript Function to Show Popup -->
+	<script>
+		function showPopup() {
+			document.getElementById("popup").style.display = "flex";
+		}
+		function closePopup() {
+			document.getElementById("popup").style.display = "none";
+			window.location.href = "../index.php";
+		}
+	</script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 	
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form class="modal-content animate" action="/signupaction.php" method="post">
+		<form class="modal-content animate" action="signupaction.php" method="post">
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -26,8 +26,7 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<?php include '\Checklogin.php';?>
-		<form name="myForm1" action="/loginaction.php" method="post">
+		<form name="myForm1" action="loginaction.php" method="post">
   			<h1>Sign in</h1>
   			<div class="social-container">
     			<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

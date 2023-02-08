@@ -22,7 +22,10 @@ if (isset($_POST['submit'])) {
   // Check if the insertion was successful
   if ($result) {
     // Redirect the user to the dashboard
-    header("Location: login\index.php");
+    $_SESSION['logged_in'] = true;
+    $_SESSION['username'] = $_POST['username'];
+    header("Location: \index.php");
+    exit;
   } else {
     // If the insertion was unsuccessful, display an error message
     echo "Error: " . mysqli_error($conn);
