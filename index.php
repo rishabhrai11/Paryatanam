@@ -95,19 +95,18 @@
                                 <?php
                                     // Start the session
                                      session_start();
-
                                          // Check if the user's name is stored in the session
                                         if (isset($_SESSION['username'])) {
                                                 // Retrieve the user's name from the session
                                                 $username = $_SESSION['username'];
-                                                // Display the user's name
                                                 echo "Welcome, $username";
+                                                echo "          ";
                                                 echo "<button class='logout-button' onclick=\"window.location.href='login/logoutaction.php'\">Logout</button>";
                                         } else {
                                                  // The user's name is not stored in the session, show an error
-                                                echo "<a href='login/login.php'>Login/Signup</a></button2></li>";
+                                                echo "<a href='login/Admin_User.html'>Login/Signup</a></button2></li>";
                                         }
-                                            ?>
+                                        ?>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

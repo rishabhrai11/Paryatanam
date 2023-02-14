@@ -19,8 +19,8 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
-			<input type="text" name="username" placeholder="Username" />
-			<input type="email" name="email" placeholder="Email" id="email" />
+			<input type="text" name="username" placeholder="Username" >
+			<input type="email" name="email" placeholder="Email" id="email" class="tb" required>
 			<input type="password" name="password" placeholder="Password" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." required>
 			<input type="submit" name="submit" value="Sign Up" class="btn"  ></button>
 		</form>
@@ -36,7 +36,6 @@
   			<span>or use your account</span>
   				<input type="email" name="email" placeholder="Email" id="email" class="tb" required>
   				<input type="password" name="password" placeholder="Password" id="pwd1" required>
-  				<a href="#">Forgot your password?</a>
   				<input type="submit" name="submit" value="Login" class="btn">
 		</form>
 
